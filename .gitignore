@@ -1,0 +1,14 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Node / tooling (if added later)
+node_modules/
+
+# Build artifacts
+dist/
+
+# Local data
+DATOS_SAR/result/*.tiff
+DATOS_SAR/**/*.csv

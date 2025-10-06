@@ -1,0 +1,73 @@
+<section class="panel" id="panelMap">
+  <h2>Main map</h2>
+  <p class="hint">VV, VH, RGB composite, and coastline/reeds overlays are displayed here.</p>
+  <div id="mapCanvas" class="map-canvas">
+    <div class="map-placeholder">Map in preparation (use Leaflet or canvas).</div>
+  </div>
+</section>
+
+<section class="panel" id="panelInsights">
+  <h2>Insights</h2>
+  <p class="hint">Space for charts: estimated water area by year, cumulative retreat, etc.</p>
+  <div id="insightsStatus" class="status"></div>
+  <div class="charts">
+    <div class="chart-box">
+      <canvas id="chartWater" width="320" height="180"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartRetreat" width="320" height="180"></canvas>
+    </div>
+    <div class="chart-box">
+      <canvas id="chartTotoral" width="320" height="180"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="panel" id="panelValidation">
+  <h2>Metrics</h2>
+  <p class="hint">Summary of the loaded raster (no time series required).</p>
+  <div class="validation-grid">
+    <div class="validation-card">
+      <div>
+        <strong>Estimated water area</strong>
+        <p id="metricWater">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Cumulative retreat</strong>
+        <p id="metricRetreat">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Exposed reeds (totorales)</strong>
+        <p id="metricTotoral">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Distribution/statistics</strong>
+        <p id="metricStd">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Backscatter entropy</strong>
+        <p id="metricEntropy">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Percentiles (p2, p25, p50, p75, p98)</strong>
+        <p id="metricPercentiles">–</p>
+      </div>
+    </div>
+    <div class="validation-card">
+      <div>
+        <strong>Coverage and total area</strong>
+        <p id="metricCoverage">–</p>
+      </div>
+    </div>
+  </div>
+</section>

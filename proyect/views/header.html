@@ -1,0 +1,34 @@
+<header class="navbar">
+  <div class="brand">
+    <span class="nasa-meatball">🛰️</span>
+    <h1>MultiLakeSAR</h1>
+  </div>
+  <nav class="nav-actions">
+    <a href="#/dashboard" class="btn-secondary">Dashboard</a>
+    <a href="#/validacion" class="btn-secondary">Validation</a>
+    <a href="#/acerca" class="btn-secondary">About</a>
+    <button id="btnHelp" class="btn-secondary">Help</button>
+  </nav>
+  <!-- Help Modal -->
+  <div id="helpModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="helpTitle" aria-modal="true" style="display:none;">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content" role="document">
+      <div class="modal-header">
+        <h3 id="helpTitle">Quick Guide</h3>
+        <button class="modal-close" id="helpClose" aria-label="Close">×</button>
+      </div>
+      <div class="modal-body">
+        <ol>
+          <li>Upload CSV/JSON metadata and VV/VH GeoTIFFs, or provide COG URLs.</li>
+          <li>Click "Validate Dataset" to check files and prepare the map.</li>
+          <li>Use layer toggles (VV/VH/RGB, Coastline, Reeds) to explore.</li>
+          <li>Adjust visualization range or presets (Auto, dB, p98) if needed.</li>
+          <li>Review metrics and charts in the Dashboard for insights.</li>
+        </ol>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="helpOk">OK</button>
+      </div>
+    </div>
+  </div>
+</header>

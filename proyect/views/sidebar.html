@@ -1,0 +1,69 @@
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <h2>SAR Dataset</h2>
+    <p class="hint">Data loading and validation (critical).</p>
+    <p class="hint">Upload files or provide URLs (COG/HTTP). If URL is filled, it takes precedence over file.</p>
+    <label class="file-label">Metadata CSV
+      <input type="file" id="fileCsv" accept=".csv" />
+    </label>
+    <label class="file-label">CSV URL
+      <input type="url" id="urlCsv" placeholder="https://.../metadata.csv" />
+    </label>
+    <label class="file-label">Metadata JSON
+      <input type="file" id="fileJson" accept=".json" />
+    </label>
+    <label class="file-label">JSON URL
+      <input type="url" id="urlJson" placeholder="https://.../metadata.json" />
+    </label>
+    <label class="file-label">VV raster (GeoTIFF)
+      <input type="file" id="fileVv" accept=".tif,.tiff" />
+    </label>
+    <label class="file-label">VV URL (GeoTIFF/COG)
+      <input type="url" id="urlVv" placeholder="https://.../vv.tif" />
+    </label>
+    <label class="file-label">VH raster (GeoTIFF)
+      <input type="file" id="fileVh" accept=".tif,.tiff" />
+    </label>
+    <label class="file-label">VH URL (GeoTIFF/COG)
+      <input type="url" id="urlVh" placeholder="https://.../vh.tif" />
+    </label>
+    <button id="btnValidate" class="btn-primary">Validate Dataset</button>
+    <div id="validationStatus" class="status"></div>
+  </div>
+
+  <div class="sidebar-section">
+    <h2>Layers</h2>
+    <p class="hint">Toggle main views.</p>
+    <label><input type="checkbox" id="layerVV" checked /> VV</label>
+    <label><input type="checkbox" id="layerVH" checked /> VH</label>
+    <label><input type="checkbox" id="layerRGB" /> RGB composite (VV/VH)</label>
+    <label><input type="checkbox" id="layerCoast" /> Coastline</label>
+    <label><input type="checkbox" id="layerTotorales" /> Dry reeds (totorales)</label>
+  </div>
+
+  <div class="sidebar-section">
+    <h2>Visualization</h2>
+    <p class="hint">Adjust display range (scale 0–255). Helpful for low/high contrast.</p>
+    <div>
+      <label class="file-label">Min
+        <input type="number" id="visMin" placeholder="auto" step="0.1" />
+      </label>
+      <label class="file-label">Max
+        <input type="number" id="visMax" placeholder="auto" step="0.1" />
+      </label>
+    </div>
+    <div class="grid-2" style="margin-top: 0.5rem;">
+      <label>Range preset
+        <select id="visPreset">
+          <option value="auto">Auto</option>
+          <option value="db">dB (-25 to 0)</option>
+          <option value="p98">Percentile 2–98</option>
+        </select>
+      </label>
+      <div style="display:flex; align-items:flex-end;">
+        <button id="btnApplyVis" class="btn-secondary" style="width:100%">Apply range</button>
+      </div>
+    </div>
+    <p class="hint">Tip: use known dB ranges (e.g., -25 to 0) or adjust per dataset.</p>
+  </div>
+</aside>

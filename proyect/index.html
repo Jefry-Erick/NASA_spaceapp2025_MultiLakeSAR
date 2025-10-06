@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Titicaca SAR Monitor2</title>
+    <link rel="stylesheet" href="views/styles.css" />
+    <!-- Optional CDNs for prototyping -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4QBDbk9fDAiI9l8H0gCjqkzAkGJEL2K/2Q6Z8M4bPc=" crossorigin="anonymous">
+    <!-- Fallback Leaflet CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" />
+  </head>
+  <body>
+    <div id="headerMount"></div>
+
+    <div class="layout">
+      <div id="sidebarMount"></div>
+
+      <main class="content">
+        <div id="viewMount">
+          <!-- Views will load dynamically here -->
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div>© 2025 MultiLakeSAR Team • Prototype</div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1jTn9nVkpYf3AqE6m1KQ0vLr3tAt/04rYVQ2vL6k=" crossorigin="anonymous"></script>
+    <!-- Fallback Leaflet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <!-- geotiff.js para fallback de render en canvas/ImageOverlay -->
+    <script src="https://cdn.jsdelivr.net/npm/geotiff@2.1.3/dist-browser/geotiff.min.js" crossorigin="anonymous"></script>
+    <!-- Nota: Se retiraron georaster y georaster-layer por errores de CDN.
+         El mapa usa fallback con geotiff.js y Leaflet ImageOverlay. -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script type="module" src="views/main.js"></script>
+  </body>
+</html>

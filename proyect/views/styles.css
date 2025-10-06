@@ -1,0 +1,148 @@
+:root {
+  --nasa-blue: #0b3d91; /* NASA insignia blue */
+  --nasa-red: #fc3d21;  /* NASA red */
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --gray-100: #f5f7fa;
+  --gray-200: #e6ebf2;
+  --gray-400: #a3b1c6;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--black);
+  background: var(--gray-100);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--nasa-blue);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  border-bottom: 4px solid var(--nasa-red);
+}
+.brand { display: flex; align-items: center; gap: 0.5rem; }
+.brand h1 { font-size: 1.25rem; margin: 0; }
+.nasa-meatball { font-size: 1.25rem; }
+.nav-actions { display: flex; gap: 0.5rem; }
+
+.layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 64px); }
+.sidebar {
+  background: var(--white);
+  border-right: 1px solid var(--gray-200);
+  padding: 1rem;
+}
+.sidebar h2 { color: var(--nasa-blue); margin: 0 0 0.25rem; }
+.sidebar .hint { color: var(--gray-400); margin: 0 0 0.5rem; font-size: 0.9rem; }
+.sidebar-section { margin-bottom: 1rem; }
+.file-label { display: block; margin: 0.25rem 0; font-size: 0.95rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+
+.content { padding: 1rem; }
+.panel {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.panel h2 { margin-top: 0; color: var(--nasa-blue); }
+
+.map-canvas {
+  height: 420px;
+  border: 1px dashed var(--gray-200);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden; /* asegura que el mapa no se desborde hacia los bordes */
+  padding-left: 12px; /* margen interno izquierdo para respetar el marco */
+  background: #eef3fb;
+}
+.map-canvas > .leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+.map-placeholder { color: var(--gray-400); }
+
+.charts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.chart-box {
+  min-height: 180px;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.validation-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+.validation-card {
+  min-height: 120px;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-400);
+}
+
+.footer {
+  background: var(--white);
+  border-top: 1px solid var(--gray-200);
+  color: var(--gray-400);
+  padding: 0.75rem 1rem;
+}
+
+/* Modal */
+.modal { position: fixed; inset: 0; z-index: 2000; }
+.modal-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.35); }
+.modal-content {
+  position: relative; z-index: 2001; background: var(--white);
+  width: min(620px, 92vw); max-height: 80vh; overflow: auto;
+  margin: 8vh auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border: 1px solid var(--gray-200);
+  color: var(--black); /* force black text inside modal */
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 0.75rem 1rem; border-bottom: 1px solid var(--gray-200); }
+.modal-body { padding: 0.75rem 1rem; }
+.modal-footer { display: flex; justify-content: flex-end; gap: 0.5rem; padding: 0.75rem 1rem; border-top: 1px solid var(--gray-200); }
+.modal-close { background: transparent; border: none; font-size: 1.25rem; cursor: pointer; }
+
+/* Buttons */
+.btn-primary {
+  background: var(--nasa-red);
+  color: var(--white);
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-primary:hover { filter: brightness(0.95); }
+.btn-secondary:hover { filter: brightness(1.1); }
+
+/* Status */
+.status { margin-top: 0.5rem; font-size: 0.9rem; }
+.status.ok { color: #2e7d32; }
+.status.warn { color: #d32f2f; }
+
+/* Responsive */
+@media (max-width: 980px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .charts, .validation-grid { grid-template-columns: 1fr; }
+}
